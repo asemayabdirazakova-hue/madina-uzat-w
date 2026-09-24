@@ -1,1 +1,1 @@
-# madina-uzat-w
+# madina-uzatu
