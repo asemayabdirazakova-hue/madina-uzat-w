@@ -4,23 +4,51 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title> Madina-ay | Qız uzatıw </title>
+  <title>Madina-aydıń uzatıw toyı</title>
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body {
-      font-family: Georgia, serif;
-      background: #fffaf7;
-      color: #4d1118;
+    html {
+      scroll-behavior: smooth;
     }
+
+    :root {
+      --wine: #7a0c18;
+      --wine-dark: #4f060d;
+      --red: #a51324;
+      --cream: #fffaf6;
+      --cream-2: #f8eee9;
+      --pink: #efd6d4;
+      --gold: #c6a36a;
+      --text: #332322;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* HERO */
 
     .hero {
       min-height: 100vh;
+      min-height: 100svh;
+      position: relative;
+
       display: flex;
       align-items: flex-end;
       justify-content: center;
@@ -28,128 +56,609 @@
       background:
         linear-gradient(
           to bottom,
-          rgba(0,0,0,0.05),
-          rgba(45,0,5,0.72)
+          rgba(20, 0, 0, 0.04) 30%,
+          rgba(40, 0, 5, 0.22) 58%,
+          rgba(53, 0, 7, 0.88) 100%
         ),
         url("photo1.jpg");
 
       background-size: cover;
-      background-position: center;
-      position: relative;
+      background-position: center top;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 9px solid rgba(255,255,255,0.08);
+      pointer-events: none;
     }
 
     .hero-content {
+      position: relative;
+      z-index: 2;
+
       width: 100%;
+      padding: 60px 20px 65px;
       text-align: center;
       color: white;
-      padding: 60px 25px 80px;
     }
 
-    .small-text {
-      font-size: 18px;
-      letter-spacing: 4px;
+    .small-title {
+      font-size: 13px;
+      letter-spacing: 6px;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    h1 {
-      font-size: 56px;
-      font-weight: 400;
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(64px, 16vw, 105px);
       font-style: italic;
-      margin-bottom: 10px;
+      font-weight: 400;
+      line-height: 0.9;
     }
 
-    .subtitle {
-      font-size: 25px;
-      letter-spacing: 2px;
-      margin-bottom: 28px;
+    .hero-subtitle {
+      margin-top: 14px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-style: italic;
     }
 
     .heart {
-      font-size: 28px;
-      margin: 20px;
+      margin: 15px 0;
+      font-size: 26px;
     }
 
-    .date {
-      font-size: 20px;
-      letter-spacing: 3px;
-      margin-top: 25px;
+    .hero-date {
+      font-size: 16px;
+      letter-spacing: 5px;
+      margin-top: 13px;
     }
 
     .music-button {
-      margin-top: 28px;
-      border: 1px solid rgba(255,255,255,0.8);
-      background: rgba(255,255,255,0.15);
+      margin-top: 25px;
+      padding: 13px 22px;
+
+      border: 1px solid rgba(255,255,255,0.72);
+      border-radius: 50px;
+
       color: white;
-      padding: 14px 24px;
-      border-radius: 40px;
-      font-size: 16px;
+      background: rgba(255,255,255,0.13);
+
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+
+      font-family: "Montserrat", sans-serif;
       cursor: pointer;
-      backdrop-filter: blur(5px);
     }
+
+    /* COMMON */
+
+    section {
+      position: relative;
+      padding: 78px 22px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--wine);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(42px, 11vw, 62px);
+      line-height: 1;
+      font-style: italic;
+      font-weight: 500;
+
+      margin-bottom: 28px;
+    }
+
+    .mini-ornament {
+      text-align: center;
+      color: var(--wine);
+      font-size: 28px;
+      margin: 14px 0 25px;
+    }
+
+    .line {
+      width: 90px;
+      height: 1px;
+      background: var(--gold);
+      margin: 20px auto;
+    }
+
+    /* INVITATION */
 
     .invitation {
-      padding: 80px 28px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(166,20,36,.05), transparent 27%),
+        radial-gradient(circle at 90% 70%, rgba(166,20,36,.05), transparent 30%),
+        var(--cream);
+
       text-align: center;
-      background: #fffaf7;
     }
 
-    .invitation h2 {
-      font-size: 34px;
-      font-weight: 400;
-      margin-bottom: 30px;
-      color: #8b0d1b;
-    }
-
-    .invitation p {
-      font-size: 20px;
-      line-height: 1.8;
-      max-width: 650px;
+    .invitation-text {
+      max-width: 660px;
       margin: auto;
-      color: #3c2828;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      line-height: 1.55;
     }
 
-    .ornament {
-      color: #aa1326;
-      font-size: 30px;
-      margin: 25px 0;
+    .name {
+      margin: 26px 0 17px;
+
+      color: var(--wine);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 58px;
+      line-height: 1;
+      font-style: italic;
     }
+
+    /* DATE */
+
+    .date-section {
+      background: white;
+      text-align: center;
+    }
+
+    .big-date {
+      color: var(--wine);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 38px;
+      margin-bottom: 5px;
+    }
+
+    .time {
+      font-size: 18px;
+      letter-spacing: 3px;
+      margin-bottom: 35px;
+    }
+
+    /* CALENDAR */
+
+    .calendar {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+
+      background: var(--cream);
+      border: 1px solid #ecd8d3;
+      border-radius: 25px;
+
+      padding: 27px 19px;
+
+      box-shadow: 0 13px 45px rgba(71, 6, 13, 0.07);
+    }
+
+    .calendar-month {
+      color: var(--wine);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      margin-bottom: 19px;
+    }
+
+    .week,
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+    }
+
+    .week div {
+      padding: 6px 0;
+      color: #9f7675;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+
+    .days div {
+      min-height: 39px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 50%;
+      font-size: 14px;
+    }
+
+    .special-day {
+      position: relative;
+      color: white;
+      background: var(--wine);
+      font-weight: 600;
+    }
+
+    .special-day::before {
+      content: "♡";
+      position: absolute;
+      top: -20px;
+      color: var(--wine);
+      font-size: 20px;
+    }
+
+    /* LOCATION */
+
+    .location {
+      background: var(--cream-2);
+      text-align: center;
+    }
+
+    .location-icon {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .location-name {
+      color: var(--wine);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      margin-bottom: 14px;
+    }
+
+    .location p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 26px;
+
+      padding: 14px 31px;
+      border-radius: 50px;
+
+      background: var(--wine);
+      color: white;
+
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    /* PROGRAM */
+
+    .program {
+      background: white;
+    }
+
+    .program-list {
+      width: 100%;
+      max-width: 520px;
+      margin: auto;
+    }
+
+    .program-item {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+
+      padding: 23px 8px;
+
+      border-bottom: 1px solid #ecd9d4;
+    }
+
+    .program-time {
+      min-width: 72px;
+
+      color: var(--wine);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 31px;
+      font-weight: 500;
+    }
+
+    .program-text {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* GALLERY */
+
+    .gallery-section {
+      background: var(--cream);
+    }
+
+    .gallery {
+      max-width: 850px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+
+      border-radius: 15px;
+
+      box-shadow: 0 8px 25px rgba(60,0,10,.08);
+    }
+
+    .gallery img:first-child {
+      grid-column: span 2;
+      height: 490px;
+    }
+
+    /* RSVP */
+
+    .rsvp {
+      text-align: center;
+      background: white;
+    }
+
+    .rsvp-text {
+      max-width: 520px;
+      margin: -10px auto 25px;
+      line-height: 1.7;
+    }
+
+    .rsvp-form {
+      max-width: 520px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .rsvp-form label {
+      display: block;
+      margin: 17px 0 7px;
+
+      color: var(--wine);
+      font-size: 14px;
+    }
+
+    .rsvp-form input[type="text"] {
+      width: 100%;
+      padding: 15px 16px;
+
+      border: 1px solid #deb9b9;
+      border-radius: 14px;
+
+      background: var(--cream);
+      outline: none;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 15px;
+    }
+
+    .choice {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+
+      margin-top: 16px;
+    }
+
+    .choice label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      margin: 0;
+      color: var(--text);
+    }
+
+    .choice input {
+      accent-color: var(--wine);
+      width: 19px;
+      height: 19px;
+    }
+
+    .submit-button {
+      width: 100%;
+      margin-top: 27px;
+
+      padding: 16px;
+
+      border: none;
+      border-radius: 50px;
+
+      background: var(--wine);
+      color: white;
+
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+
+      cursor: pointer;
+    }
+
+    .success {
+      display: none;
+
+      margin-top: 22px;
+      padding: 15px;
+
+      border-radius: 12px;
+      background: #f9e9e7;
+
+      color: var(--wine);
+      text-align: center;
+    }
+
+    /* COUNTDOWN */
+
+    .countdown-section {
+      text-align: center;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #fffaf6,
+          #f6e5df
+        );
+    }
+
+    .countdown {
+      max-width: 590px;
+      margin: 35px auto 0;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .count-item {
+      padding: 22px 4px;
+
+      background: rgba(255,255,255,.75);
+      border: 1px solid #ead6d0;
+      border-radius: 18px;
+    }
+
+    .count-number {
+      color: var(--wine);
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 39px;
+      line-height: 1;
+    }
+
+    .count-label {
+      margin-top: 9px;
+      color: #946f6e;
+      font-size: 11px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      min-height: 490px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      padding: 70px 25px;
+
+      text-align: center;
+      color: white;
+
+      background:
+        linear-gradient(
+          rgba(88, 3, 14, .93),
+          rgba(63, 2, 10, .98)
+        ),
+        url("photo3.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .footer h2 {
+      max-width: 600px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(45px, 11vw, 70px);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .parents {
+      margin-top: 26px;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      font-style: italic;
+    }
+
+    /* ANIMATION */
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.9s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 47px;
+
+      section {
+        padding: 67px 18px;
       }
 
-      .subtitle {
-        font-size: 21px;
+      .hero {
+        background-position: center top;
       }
 
-      .invitation h2 {
-        font-size: 29px;
+      .hero h1 {
+        font-size: 67px;
       }
 
-      .invitation p {
-        font-size: 18px;
+      .hero-subtitle {
+        font-size: 26px;
       }
+
+      .invitation-text {
+        font-size: 22px;
+      }
+
+      .name {
+        font-size: 52px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .gallery img {
+        height: 220px;
+      }
+
+      .gallery img:first-child {
+        height: 420px;
+      }
+
+      .countdown {
+        gap: 6px;
+      }
+
+      .count-item {
+        padding: 18px 2px;
+      }
+
+      .count-number {
+        font-size: 31px;
+      }
+
+      .count-label {
+        font-size: 9px;
+      }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
+
+<!-- ГЛАВНЫЙ ЭКРАН -->
 
 <section class="hero">
 
   <div class="hero-content">
 
-    <div class="small-text">
-     Qız uzatıw
+    <div class="small-title">
+      Qız uzatıw
     </div>
 
     <h1>
       Madina-ay
     </h1>
 
-    <div class="subtitle">
+    <div class="hero-subtitle">
       Qız uzatıw toyı
     </div>
 
@@ -157,12 +666,152 @@
       ♡
     </div>
 
-    <button class="music-button">
-      ▶ Той үстинде тәтти күнлер
+    <div class="hero-date">
+      04 · 10 · 2026
+    </div>
+
+    <button
+      class="music-button"
+      onclick="toggleMusic()"
+      id="musicButton">
+      ▶ Toy ústinde tátti kúnler
     </button>
 
-    <div class="date">
-      04 · 10 · 2026
+  </div>
+
+</section>
+
+
+<!-- МУЗЫКА -->
+
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<!-- ПРИГЛАШЕНИЕ -->
+
+<section class="invitation">
+
+  <div class="fade">
+
+    <div class="mini-ornament">
+      ❦
+    </div>
+
+    <h2 class="section-title">
+      Húrmetli aǵayın-tuwıs!
+    </h2>
+
+    <div class="invitation-text">
+
+      Húrmetli aǵayın-tuwıs,
+      quda-jekjat, dos-jaranlar!
+
+      <div class="name">
+        Madina-ay
+      </div>
+
+      Sizlerdi qızımız Madina-aydıń
+      uzatıw toyına arnalǵan
+      aq dásturxanımızdıń qádirli qonaǵı
+      bolıwǵa shaqıramız.
+
+    </div>
+
+    <div class="line"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ДАТА -->
+
+<section class="date-section">
+
+  <div class="fade">
+
+    <h2 class="section-title">
+      Toy kúni
+    </h2>
+
+    <div class="big-date">
+      04.10.2026
+    </div>
+
+    <div class="time">
+      Saat 13:00
+    </div>
+
+
+    <div class="calendar">
+
+      <div class="calendar-month">
+        Oktabr 2026
+      </div>
+
+
+      <div class="week">
+        <div>DU</div>
+        <div>SE</div>
+        <div>SH</div>
+        <div>BE</div>
+        <div>JU</div>
+        <div>SH</div>
+        <div>JE</div>
+      </div>
+
+
+      <div class="days">
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+
+        <div class="special-day">
+          4
+        </div>
+
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+
+      </div>
+
     </div>
 
   </div>
@@ -170,32 +819,464 @@
 </section>
 
 
-<section class="invitation">
 
-  <div class="ornament">
-    ❦
-  </div>
+<!-- МЕСТО -->
 
-  <h2>
-    Húrmetli aǵayin-tuwıs!
-  </h2>
+<section class="location">
 
-  <p>
-    Húrmetli aǵayın-tuwıs, quda-jekjat,
-dos-jaranlar!
-    <br><br>
+  <div class="fade">
 
-   Sizlerdi qızımız Madina-aydıń
-qız uzatıw toyına arnalǵan
-aq dásturxanımızdıń qadirli qonaǵı
-bolıwǵa shaqıramız.
-  </p>
+    <div class="location-icon">
+      ♡
+    </div>
 
-  <div class="ornament">
-    ❦
+    <h2 class="section-title">
+      Ótkiziliw ornı
+    </h2>
+
+    <div class="location-name">
+      Nókis qalası
+    </div>
+
+    <p>
+      Oraq balǵa<br>
+      Mamanbiy 127
+    </p>
+
+    <a
+      class="map-button"
+      href="#"
+      onclick="openMap(); return false;">
+      Kartadan kóriw
+    </a>
+
   </div>
 
 </section>
+
+<!-- ГАЛЕРЕЯ -->
+
+<section class="gallery-section">
+
+  <div class="fade">
+
+    <h2 class="section-title">
+      Estelik súwretler
+    </h2>
+
+
+    <div class="gallery">
+
+      <img
+        src="photo1.jpg"
+        alt="Madina-ay">
+
+      <img
+        src="photo2.jpg"
+        alt="Madina-ay">
+
+      <img
+        src="photo3.jpg"
+        alt="Madina-ay">
+
+      <img
+        src="photo4.jpg"
+        alt="Madina-ay">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ПОДТВЕРЖДЕНИЕ -->
+
+<section class="rsvp">
+
+  <div class="fade">
+
+    <h2 class="section-title">
+      Qatnasıwıńızdı tastıyıqlawdı soraymız
+    </h2>
+
+    <p class="rsvp-text">
+      Toyımızǵa keliwińiz haqqında
+      juwap beriwińizdi soraymız.
+    </p>
+
+
+    <form
+      class="rsvp-form"
+      onsubmit="sendRSVP(event)">
+
+
+      <label>
+        Atıńız
+      </label>
+
+      <input
+        type="text"
+        id="guestName"
+        placeholder="Atıńızdı jazıń"
+        required>
+
+
+      <label>
+        Jubıńızdıń atı
+      </label>
+
+      <input
+        type="text"
+        id="partnerName"
+        placeholder="Jubıńızdıń atı">
+
+
+      <label>
+        Toyǵa kelesiz be?
+      </label>
+
+
+      <div class="choice">
+
+        <label>
+          <input
+            type="radio"
+            name="attendance"
+            value="yes"
+            required>
+
+          Awa, álbette
+        </label>
+
+
+        <label>
+          <input
+            type="radio"
+            name="attendance"
+            value="no">
+
+          Ókinishke qaray kele almayman
+        </label>
+
+      </div>
+
+
+      <button
+        class="submit-button"
+        type="submit">
+        Jiberiw
+      </button>
+
+
+      <div
+        class="success"
+        id="successMessage">
+
+        Raxmet! Juwabıńız qabıl etildi ♡
+
+      </div>
+
+
+    </form>
+
+  </div>
+
+</section>
+
+
+
+<!-- ТАЙМЕР -->
+
+<section class="countdown-section">
+
+  <div class="fade">
+
+    <h2 class="section-title">
+      Toy baslanıwına qalǵan waqıt
+    </h2>
+
+
+    <div class="countdown">
+
+
+      <div class="count-item">
+
+        <div
+          class="count-number"
+          id="days">
+          0
+        </div>
+
+        <div class="count-label">
+          kún
+        </div>
+
+      </div>
+
+
+      <div class="count-item">
+
+        <div
+          class="count-number"
+          id="hours">
+          0
+        </div>
+
+        <div class="count-label">
+          saat
+        </div>
+
+      </div>
+
+
+      <div class="count-item">
+
+        <div
+          class="count-number"
+          id="minutes">
+          0
+        </div>
+
+        <div class="count-label">
+          minut
+        </div>
+
+      </div>
+
+
+      <div class="count-item">
+
+        <div
+          class="count-number"
+          id="seconds">
+          0
+        </div>
+
+        <div class="count-label">
+          sekund
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ФИНАЛ -->
+
+<footer class="footer">
+
+  <div>
+
+    <h2>
+      Sizdi uzatıw toyımızda kútemiz!
+    </h2>
+
+    <div class="heart">
+      ♡
+    </div>
+
+    <div class="parents">
+      Jandulla hám Tursınay
+    </div>
+
+  </div>
+
+</footer>
+
+
+
+<script>
+
+  /* ТАЙМЕР */
+
+  const weddingDate =
+    new Date("2026-10-04T13:00:00+05:00");
+
+
+  function updateCountdown() {
+
+    const now = new Date();
+
+    const difference =
+      weddingDate - now;
+
+
+    if (difference <= 0) {
+
+      document.getElementById("days").innerText = "0";
+      document.getElementById("hours").innerText = "0";
+      document.getElementById("minutes").innerText = "0";
+      document.getElementById("seconds").innerText = "0";
+
+      return;
+    }
+
+
+    const days =
+      Math.floor(
+        difference /
+        (1000 * 60 * 60 * 24)
+      );
+
+
+    const hours =
+      Math.floor(
+        (difference /
+        (1000 * 60 * 60)) % 24
+      );
+
+
+    const minutes =
+      Math.floor(
+        (difference /
+        (1000 * 60)) % 60
+      );
+
+
+    const seconds =
+      Math.floor(
+        (difference / 1000) % 60
+      );
+
+
+    document.getElementById("days").innerText =
+      days;
+
+    document.getElementById("hours").innerText =
+      hours;
+
+    document.getElementById("minutes").innerText =
+      minutes;
+
+    document.getElementById("seconds").innerText =
+      seconds;
+
+  }
+
+
+  updateCountdown();
+
+  setInterval(
+    updateCountdown,
+    1000
+  );
+
+
+  /* МУЗЫКА */
+
+  let musicPlaying = false;
+
+
+  function toggleMusic() {
+
+    const music =
+      document.getElementById("music");
+
+    const button =
+      document.getElementById("musicButton");
+
+
+    if (!musicPlaying) {
+
+      music.play();
+
+      button.innerText =
+        "❚❚ Toy ústinde tátti kúnler";
+
+      musicPlaying = true;
+
+    } else {
+
+      music.pause();
+
+      button.innerText =
+        "▶ Toy ústinde tátti kúnler";
+
+      musicPlaying = false;
+
+    }
+
+  }
+
+
+  /* RSVP */
+
+  function sendRSVP(event) {
+
+    event.preventDefault();
+
+    document.getElementById(
+      "successMessage"
+    ).style.display = "block";
+
+  }
+
+
+  /* КАРТА */
+
+  function openMap() {
+
+    const address =
+      encodeURIComponent(
+        "Mamanbiy 127, Nukus, Uzbekistan"
+      );
+
+    window.open(
+      "https://www.google.com/maps/search/?api=1&query=" + address,
+      "_blank"
+    );
+
+  }
+
+
+  /* АНИМАЦИИ */
+
+  const elements =
+    document.querySelectorAll(".fade");
+
+
+  const observer =
+    new IntersectionObserver(
+
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add(
+              "show"
+            );
+
+          }
+
+        });
+
+      },
+
+      {
+        threshold: 0.15
+      }
+
+    );
+
+
+  elements.forEach(element => {
+
+    observer.observe(element);
+
+  });
+
+</script>
+
 
 </body>
 </html>
